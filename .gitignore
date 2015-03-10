@@ -1,10 +1,10 @@
 build
 bin
 deb
-pyjd/__init__.py
 examples/showcase/build/
 examples/showcase/src/demoInfo.py
 output
+__output__
 *.pyc
 *.pyo
 .*.sw?
@@ -17,3 +17,8 @@ output
 /dev/eggs
 *PureMVC_Python*
 
+.lock*
+.waf*
+/.project
+/.pydevproject
+/.settings

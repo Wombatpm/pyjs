@@ -11,19 +11,19 @@ from pyjamas.ui.VerticalPanel import VerticalPanel
 from pyjamas.ui.Sink import SinkList
 from pyjamas import History
 from pyjamas import Window
-import Info
-import Buttons
-import Layouts
-import Images
-import Menus
-import Lists
-import Popups
-import Tables
-import Text
-import Trees
-import Frames
-import Tabs
-from Logger import Logger
+import sink.Info as Info
+import sink.Buttons as Buttons
+import sink.Layouts as Layouts
+import sink.Images as Images
+import sink.Menus as Menus
+import sink.Lists as Lists
+import sink.Popups as Popups
+import sink.Tables as Tables
+import sink.Text as Text
+import sink.Trees as Trees
+import sink.Frames as Frames
+import sink.Tabs as Tabs
+from sink.Logger import Logger
 
 log = logging.getAppendLogger(__name__, logging.DEBUG, logging.PLAIN_FORMAT)
 
@@ -43,7 +43,7 @@ class KitchenSink:
         self.description=HTML()
         self.sink_list=SinkList()
         self.panel=DockPanel()
-        
+
         self.loadSinks()
         self.sinkContainer = DockPanel()
         self.sinkContainer.setStyleName("ks-Sink")
@@ -94,7 +94,7 @@ class KitchenSink:
         self.sinkContainer.setCellHeight(self.curSink, "100%")
         self.sinkContainer.setCellVerticalAlignment(self.curSink, HasAlignment.ALIGN_TOP)
         self.curSink.onShow()
-        
+
     def loadSinks(self):
         self.sink_list.add(Info.init())
         self.sink_list.add(Buttons.init())

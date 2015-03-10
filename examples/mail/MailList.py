@@ -6,7 +6,7 @@ from pyjamas.ui.Widget import Widget
 from pyjamas.ui.Label import Label
 from pyjamas.ui import HasAlignment
 from MailItems import MailItems
-from Logger import Logger
+from MailLogger import Logger
 
 class MailList(Composite):
 
@@ -70,7 +70,7 @@ class MailList(Composite):
                 self.styleRow(self.selectedRow, False)
                 self.selectedRow = -1
                 self.update()
-    
+
         elif (sender == self.newerButton):
             # Move back a page.
             self.startIndex = self.startIndex - MailList.VISIBLE_EMAIL_COUNT
@@ -108,7 +108,7 @@ class MailList(Composite):
         item = MailItems().getMailItem(self.startIndex + row)
         if item is None:
             return
-                    
+
         self.styleRow(self.selectedRow, False)
         self.styleRow(row, True)
 

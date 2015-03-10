@@ -1,3 +1,13 @@
+import sys
+import os
+try:
+    import pyjswidgets
+    import pyjswaddons
+    sys.path += [os.path.dirname(pyjswidgets.__file__),
+                 os.path.dirname(pyjswaddons.__file__), ]
+except ImportError:
+    pass
+
 from UnitTest import IN_BROWSER, IN_JS
 from LoopTest import LoopTest
 from NoInlineCodeTest import NoInlineCodeTest
@@ -97,11 +107,11 @@ def main():
     if IN_BROWSER:
         t.add(JSOTest)
         t.add(WindowTest)
-        
+
     if sys.version_info >= (2, 7):
         from Syntax27Test import Syntax27Test
         t.add(Syntax27Test)
-        
+
         from WithTest import WithTest
         t.add(WithTest)
 

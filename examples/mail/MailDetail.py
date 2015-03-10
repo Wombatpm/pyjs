@@ -3,7 +3,7 @@ from pyjamas.ui.DockPanel import DockPanel
 from pyjamas.ui.HTML import HTML
 from pyjamas.ui.ScrollPanel import ScrollPanel
 from pyjamas.ui.VerticalPanel import VerticalPanel
-from Logger import Logger
+from MailLogger import Logger
 
 class MailDetail(Composite):
     def __init__(self):
@@ -50,7 +50,7 @@ class MailDetail(Composite):
         self.sender.setHTML("<b>From:</b>&nbsp;" + item.sender)
         self.recipient.setHTML("<b>To:</b>&nbsp;foo@example.com")
         self.body.setHTML(item.body)
-        
+
     def adjustSize(self, windowWidth, windowHeight):
         scrollWidth = windowWidth - self.scroller.getAbsoluteLeft() - 9
         if (scrollWidth < 1):

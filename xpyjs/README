@@ -1,3 +1,0 @@
-This directory has some experimental and conceptual exercises in improving or rewriting the pyjs compiler to be easier to test, more modular, support more python semantics and of course performance.
-
-One major new feature being tested is using Javascript prototype as a way to implement Python MRO. As classes are loaded, instead of copying them into the subclasses, this new implementation will chain prototypes and allow true inheritance of methods, attributes, etc.
